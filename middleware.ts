@@ -5,7 +5,11 @@ export function middleware(request: NextRequest) {
   const token = request.cookies.get("token")?.value; // Cek apakah token ada
   const isAuthPage =
     request.nextUrl.pathname.startsWith("/login") ||
-    request.nextUrl.pathname.startsWith("/register");
+    request.nextUrl.pathname.startsWith("/register") ||
+    request.nextUrl.pathname.startsWith("/forgot-password") ||
+    request.nextUrl.pathname.startsWith("/reset-password"); // ✅ ini dia
+
+
 
   // 🔹 Jika user belum login dan mencoba akses halaman yang butuh login, redirect ke login
   if (!token && !isAuthPage) {
