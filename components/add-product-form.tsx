@@ -52,7 +52,7 @@ export function AddProductForm({ onAdd, onCancel }: AddProductFormProps) {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       <div>
-        <Label htmlFor="name">Product Name</Label>
+        <Label htmlFor="name">Nama Produk</Label>
         <Input
           id="name"
           {...register("name", { required: "Product name is required" })}
@@ -62,7 +62,7 @@ export function AddProductForm({ onAdd, onCancel }: AddProductFormProps) {
         )}
       </div>
       <div>
-        <Label htmlFor="description">Description</Label>
+        <Label htmlFor="description">Deskripsi</Label>
         <Textarea
           id="description"
           {...register("description", { required: "Description is required" })}
@@ -72,7 +72,7 @@ export function AddProductForm({ onAdd, onCancel }: AddProductFormProps) {
         )}
       </div>
       <div>
-        <Label htmlFor="price">Price (IDR)</Label>
+        <Label htmlFor="price">Harga (IDR)</Label>
         <Input
           id="price"
           type="text"
@@ -88,7 +88,7 @@ export function AddProductForm({ onAdd, onCancel }: AddProductFormProps) {
         <Button type="button" variant="outline" onClick={onCancel}>
           Cancel
         </Button>
-        <Button type="submit">Add Product</Button>
+        <Button type="submit">Tambah Produk</Button>
       </div>
     </form>
   );

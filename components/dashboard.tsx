@@ -80,7 +80,7 @@ export default function Dashboard() {
         className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
       >
         <MetricCard
-          title="Total Products"
+          title="Total Produk"
           value={umkmDetails.products ? umkmDetails.products.length : 0}
           icon="Package"
           change={umkmDetails.products ? umkmDetails.products.length : 0}
@@ -94,7 +94,7 @@ export default function Dashboard() {
         />
 
         <MetricCard
-          title="Location"
+          title="Lokasi"
           value={umkmDetails.address || "Unknown"}
           icon="MapPin"
           change={0}

@@ -225,7 +225,7 @@ export function ProductTable() {
         className="space-y-4"
       >
         <div>
-          <Label htmlFor="name">Name</Label>
+          <Label htmlFor="name">Nama</Label>
           <Input
             id="name"
             name="name"
@@ -234,7 +234,7 @@ export function ProductTable() {
           />
         </div>
         <div>
-          <Label htmlFor="image">Image</Label>
+          <Label htmlFor="image">Gambar</Label>
           <Input
             id="image"
             name="image"
@@ -257,7 +257,7 @@ export function ProductTable() {
           )}
         </div>
         <div>
-          <Label htmlFor="description">Description</Label>
+          <Label htmlFor="description">Deskripsi</Label>
           <Input
             id="description"
             name="description"
@@ -302,17 +302,17 @@ export function ProductTable() {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead className="w-[100px]">ID</TableHead>
-          <TableHead>Name</TableHead>
-          {showDescription && <TableHead>Description</TableHead>}
-          <TableHead>Price</TableHead>
+          {/* <TableHead className="w-[100px]">ID</TableHead> */}
+          <TableHead>Nama</TableHead>
+          {showDescription && <TableHead>Deskripsi</TableHead>}
+          <TableHead>Harga</TableHead>
           <TableHead>Action</TableHead>
         </TableRow>
       </TableHeader>
       <TableBody>
         {products.map((product) => (
           <TableRow key={product.id}>
-            <TableCell className="font-medium">{product.id}</TableCell>
+            {/* <TableCell className="font-medium">{product.id}</TableCell> */}
             <TableCell>{product.name}</TableCell>
             {showDescription && <TableCell>{product.description}</TableCell>}
             <TableCell>
@@ -380,7 +380,7 @@ export function ProductTable() {
               size="sm"
               onClick={() => deleteProduct(product.id)}
             >
-              <Trash2 className="h-4 w-4 mr-2" /> Delete
+              <Trash2 className="h-4 w-4 mr-2" /> Hapus
             </Button>
           </CardFooter>
         </Card>
@@ -391,7 +391,7 @@ export function ProductTable() {
   return (
     <div className="rounded-md border p-4">
       <div className="flex flex-wrap justify-between items-center mb-4 gap-2">
-        <h2 className="text-lg font-semibold">Products</h2>
+        <h2 className="text-lg font-semibold">Produk</h2>
         <div className="flex flex-wrap items-center gap-2">
           <Button
             variant="outline"
@@ -403,7 +403,7 @@ export function ProductTable() {
             ) : (
               <Eye className="mr-2 h-4 w-4" />
             )}
-            {showDescription ? "Hide" : "Show"} Description
+            {showDescription ? "Hide" : "Show"} Deskripsi
           </Button>
           <Button
             variant="outline"
@@ -418,7 +418,7 @@ export function ProductTable() {
             {isCardView ? "Table" : "Card"} View
           </Button>
           <Button size="sm" onClick={() => setIsModalOpen(true)}>
-            <PlusCircle className="mr-2 h-4 w-4" /> Add Product
+            <PlusCircle className="mr-2 h-4 w-4" /> Tambah Produk
           </Button>
         </div>
       </div>
@@ -426,7 +426,7 @@ export function ProductTable() {
       <Modal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
-        title="Add New Product"
+        title="Tambahkan Produk Baru"
       >
         <AddProductForm
           onAdd={addProduct}
