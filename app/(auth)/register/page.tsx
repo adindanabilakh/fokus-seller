@@ -89,11 +89,13 @@ export default function RegisterPage() {
         formData.append("document", data.document[0]);
       }
 
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_BASE_URL}/api/umkm/register`,
+      const response = await fetch("http://localhost:8000/api/umkm/register",
+        //`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/umkm/register`,
         {
           method: "POST",
           body: formData, // ✅ Kirim sebagai FormData
+          headers: {'Accept': 'application/json'  // penting supaya Laravel tahu ini API request
+  }
         }
       );
 
@@ -120,7 +122,7 @@ export default function RegisterPage() {
     <Card className="w-full max-w-md">
       <CardHeader>
         <CardTitle>Register</CardTitle>
-        <CardDescription>Create a new UMKM account</CardDescription>
+        <CardDescription>Buat akun UMKM baru anda</CardDescription>
       </CardHeader>
       <CardContent>
         {errorMessage && (
@@ -130,7 +132,7 @@ export default function RegisterPage() {
         )}
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
-            <Label htmlFor="name">UMKM Name</Label>
+            <Label htmlFor="name">Nama UMKM</Label>
             <Input
               id="name"
               {...register("name", { required: "Name is required" })}
@@ -140,13 +142,13 @@ export default function RegisterPage() {
             )}
           </div>
           <div>
-            <Label htmlFor="type">UMKM Type</Label>
+            <Label htmlFor="type">Tipe UMKM</Label>
             <select
               id="type"
               {...register("type", { required: "Type is required" })}
               className="border rounded-md p-2 w-full"
             >
-              <option value="">Select UMKM Type</option>
+              <option value="">Pilih Tipe UMKM</option>
               {categories.map((category) => (
                 <option key={category.value} value={category.value}>
                   {category.label}
@@ -158,7 +160,7 @@ export default function RegisterPage() {
             )}
           </div>
           <div>
-            <Label htmlFor="address">Address</Label>
+            <Label htmlFor="address">Alamat</Label>
             <Input
               id="address"
               {...register("address", { required: "Address is required" })}
@@ -169,7 +171,7 @@ export default function RegisterPage() {
           </div>
           {/* 🆕 Input Upload File */}
           <div>
-            <Label htmlFor="document">Upload Document</Label>
+            <Label htmlFor="document">Unggah Dokumen</Label>
             <Input
               id="document"
               type="file"
@@ -230,7 +232,7 @@ export default function RegisterPage() {
           </div>
 
           <div className="relative">
-            <Label htmlFor="confirmPassword">Confirm Password</Label>
+            <Label htmlFor="confirmPassword">Konfirmasi Password</Label>
             <Input
               id="confirmPassword"
               type={showConfirmPassword ? "text" : "password"}
@@ -265,7 +267,7 @@ export default function RegisterPage() {
           </Button>
         </form>
         <p className="text-center mt-4">
-          Already have an account?{" "}
+          Sudah punya akun?{" "}
           <Link href="/login" className="text-primary hover:underline">
             Login
           </Link>

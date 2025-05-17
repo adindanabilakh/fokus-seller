@@ -96,7 +96,7 @@ function LoginForm() {
         <CardHeader>
           <CardTitle>Login</CardTitle>
           <CardDescription>
-            Enter your credentials to access your account
+            Masukkan data akun Anda untuk mengakses akun Anda
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -144,9 +144,9 @@ function LoginForm() {
             </Button>
           </form>
           <p className="text-center mt-4">
-            Don't have an account?{" "}
+            Belum punya akun?{" "}
             <Link href="/register" className="text-primary hover:underline">
-              Register
+              Daftar sekarang
             </Link>
           </p>
         </CardContent>
@@ -164,7 +164,7 @@ function LoginForm() {
               digunakan.
             </p>
             <p className="text-gray-600 mt-1">
-              Hubungi admin untuk mempercepat proses verifikasi.
+              Hubungi admin untuk mempercepat proses verifikasi. Cek spam akun email anda secara berkala untuk mendapatkan pemberitahuan.
             </p>
             <div className="mt-4 flex justify-center space-x-4">
               <Button onClick={() => setPendingApproval(false)}>Tutup</Button>
@@ -174,7 +174,7 @@ function LoginForm() {
                 rel="noopener noreferrer"
               >
                 <Button variant="outline" className="bg-green-500 text-white">
-                  Hubungi Admin via WhatsApp
+                  Hubungi Admin via WhatsApp.
                 </Button>
               </a>
             </div>

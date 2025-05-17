@@ -72,7 +72,7 @@ export default function ResetPasswordPage() {
       <CardHeader>
         <CardTitle>Atur Ulang Password</CardTitle>
         <CardDescription>
-          Masukkan password baru untuk akun UMKM kamu
+          Masukkan password baru untuk akun UMKM anda
         </CardDescription>
       </CardHeader>
       <CardContent>
