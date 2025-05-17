@@ -91,7 +91,7 @@ export function IncomeEntryDialog({
         </DialogHeader>
         <form onSubmit={handleSubmit(submitForm)} className="space-y-4">
           <div>
-            <Label htmlFor="amount">Amount</Label>
+            <Label htmlFor="amount">Jumlah</Label>
             <Input
               id="amount"
               type="number"
@@ -99,11 +99,11 @@ export function IncomeEntryDialog({
             />
           </div>
           <div>
-            <Label htmlFor="source">Source/Category</Label>
+            <Label htmlFor="source">Tanggal</Label>
             <Input id="source" {...register("source", { required: true })} />
           </div>
           <div>
-            <Label htmlFor="date">Month</Label>
+            <Label htmlFor="date">Bulan</Label>
             <Input
               id="date"
               type="month"
@@ -111,11 +111,11 @@ export function IncomeEntryDialog({
             />
           </div>
           <div>
-            <Label htmlFor="notes">Notes (Optional)</Label>
+            <Label htmlFor="notes">Catatan (Opsional)</Label>
             <Textarea id="notes" {...register("notes")} />
           </div>
           <Button type="submit">
-            {editingEntry ? "Update" : "Add"} Income
+            {editingEntry ? "Update" : "Add"} Pendapatan
           </Button>
         </form>
       </DialogContent>

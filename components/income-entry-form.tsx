@@ -47,13 +47,13 @@ export function IncomeEntryForm({ onSubmit }: IncomeEntryFormProps) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Add Income Entry</CardTitle>
+        <CardTitle>Tambahkan jumlah pendapatan</CardTitle>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit(submitForm)} className="space-y-4">
           {/* Amount Field */}
           <div>
-            <Label htmlFor="amount">Amount</Label>
+            <Label htmlFor="amount">Jumlah Pendapatan</Label>
             <Input
               id="amount"
               type="number"
@@ -71,7 +71,7 @@ export function IncomeEntryForm({ onSubmit }: IncomeEntryFormProps) {
 
           {/* Source Field */}
           <div>
-            <Label htmlFor="source">Source/Category</Label>
+            <Label htmlFor="source">Tanggal</Label>
             <Input
               id="source"
               {...register("source", { required: "Source is required" })}
@@ -85,7 +85,7 @@ export function IncomeEntryForm({ onSubmit }: IncomeEntryFormProps) {
 
           {/* Frequency Selection */}
           <div>
-            <Label htmlFor="frequency">Frequency</Label>
+            <Label htmlFor="frequency">Frekuensi</Label>
             <Select
               value={frequency}
               onValueChange={setFrequency}
@@ -102,7 +102,7 @@ export function IncomeEntryForm({ onSubmit }: IncomeEntryFormProps) {
 
           {/* Date Field */}
           <div>
-            <Label htmlFor="date">Date</Label>
+            <Label htmlFor="date">Tanggal</Label>
             <Input
               id="date"
               type="date"
@@ -117,12 +117,12 @@ export function IncomeEntryForm({ onSubmit }: IncomeEntryFormProps) {
 
           {/* Notes Field */}
           <div>
-            <Label htmlFor="notes">Notes (Optional)</Label>
+            <Label htmlFor="notes">Catatan (Opsional)</Label>
             <Textarea id="notes" {...register("notes")} />
           </div>
 
           {/* Submit Button */}
-          <Button type="submit">Add Income</Button>
+          <Button type="submit">Tambah Pendapatan</Button>
         </form>
       </CardContent>
     </Card>

@@ -322,13 +322,13 @@ export function UMKMDetailForm({ umkmData }: { umkmData?: UMKMFormData }) {
         >
           <Card>
             <CardHeader>
-              <CardTitle>UMKM Details</CardTitle>
+              <CardTitle>Detail UMKM</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="name">UMKM Name</Label>
+                    <Label htmlFor="name">Nama UMKM</Label>
                     <Input
                       id="name"
                       {...register("name", {
@@ -363,7 +363,7 @@ export function UMKMDetailForm({ umkmData }: { umkmData?: UMKMFormData }) {
                     )}
                   </div>
                   <div>
-                    <Label htmlFor="description">Description</Label>
+                    <Label htmlFor="description">Deskripsi</Label>
                     <textarea
                       id="description"
                       {...register("description")}
@@ -374,7 +374,7 @@ export function UMKMDetailForm({ umkmData }: { umkmData?: UMKMFormData }) {
                   </div>
 
                   <div>
-                    <Label htmlFor="phone_number">Phone Number</Label>
+                    <Label htmlFor="phone_number">Nomor Handphone</Label>
                     <Input
                       id="phone_number"
                       type="tel"
@@ -395,7 +395,7 @@ export function UMKMDetailForm({ umkmData }: { umkmData?: UMKMFormData }) {
                 </div>
                 <div className="space-y-4">
                   <div>
-                    <Label htmlFor="address">Address</Label>
+                    <Label htmlFor="address">Alamat</Label>
                     <Input
                       id="address"
                       {...register("address", {
@@ -411,7 +411,9 @@ export function UMKMDetailForm({ umkmData }: { umkmData?: UMKMFormData }) {
                   </div>
                   <div className="grid grid-cols-2 gap-3">
                     <div>
-                      <Label htmlFor="open_time">Opening Time</Label>
+                      <Label htmlFor="open_time">Jam Buka  <span className="text-xs font-light text-red-500">
+              (Jika libur, atur waktu 00:00)
+            </span></Label>
                       <Input
                         id="open_time"
                         type="time"
@@ -427,7 +429,9 @@ export function UMKMDetailForm({ umkmData }: { umkmData?: UMKMFormData }) {
                     </div>
 
                     <div>
-                      <Label htmlFor="close_time">Closing Time</Label>
+                     <Label htmlFor="close_time">Jam Tutup  <span className="text-xs font-light text-red-500">
+              (Jika libur, atur waktu 00:01)
+            </span></Label>
                       <Input
                         id="close_time"
                         type="time"
@@ -486,7 +490,7 @@ export function UMKMDetailForm({ umkmData }: { umkmData?: UMKMFormData }) {
                     )}
                   </div>
                   <div>
-                    <Label htmlFor="password">Password (optional)</Label>
+                    <Label htmlFor="password">Password (opsional)</Label>
                     <Input
                       id="password"
                       type="password"
@@ -549,7 +553,7 @@ export function UMKMDetailForm({ umkmData }: { umkmData?: UMKMFormData }) {
                     className="hidden"
                   />
                   <span className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                    Choose UMKM Photos
+                    Pilih Foto UMKM
                   </span>
                 </Label>
               </CardContent>
@@ -583,7 +587,7 @@ export function UMKMDetailForm({ umkmData }: { umkmData?: UMKMFormData }) {
                     className="hidden"
                   />
                   <span className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                    Choose UMKM Document
+                    Pilih Dokumen UMKM
                   </span>
                 </Label>
               </CardContent>

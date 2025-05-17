@@ -79,7 +79,7 @@ export function IncomeTable({
   return (
     <div>
       <Input
-        placeholder="Filter by source or month"
+        placeholder="Filter berdasarkan tanggal atau bulan"
         value={filter}
         onChange={(e) => setFilter(e.target.value)}
         className="mb-4"
@@ -89,40 +89,39 @@ export function IncomeTable({
           <TableRow>
             <TableHead>
               <Button variant="ghost" onClick={() => requestSort("date")}>
-                Month
+                Tanggal
+              </Button>
+            </TableHead>
+             <TableHead>
+              <Button variant="ghost" onClick={() => requestSort("source")}>
+                Bulan
               </Button>
             </TableHead>
             <TableHead>
               <Button variant="ghost" onClick={() => requestSort("amount")}>
-                Amount
+                Pendapatan
               </Button>
             </TableHead>
-            <TableHead>
-              <Button variant="ghost" onClick={() => requestSort("source")}>
-                Source
-              </Button>
-            </TableHead>
-            <TableHead>Notes</TableHead>
+
+            <TableHead>Catatan</TableHead>
             <TableHead>Actions</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {filteredEntries.map((entry) => (
             <TableRow key={entry.id}>
+            <TableCell>{entry.source}</TableCell>
               <TableCell>
                 {entry.date
                   ? format(parseISO(entry.date), "MMMM yyyy") // 🔥 Gunakan parseISO untuk safety
                   : "Invalid Date"}
               </TableCell>
-
               <TableCell>
                 {new Intl.NumberFormat("id-ID", {
                   style: "currency",
                   currency: "IDR",
                 }).format(entry.amount)}
               </TableCell>
-
-              <TableCell>{entry.source}</TableCell>
               <TableCell>{entry.notes}</TableCell>
               <TableCell>
                 <div className="flex space-x-2">
